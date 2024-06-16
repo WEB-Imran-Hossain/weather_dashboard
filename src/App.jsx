@@ -1,4 +1,5 @@
 import './App.css'
+import Header from './components/shared/Header'
 
 function App() {
   
@@ -6,7 +7,7 @@ function App() {
   return (
     <>
       
-      <h1>Welcome to Dashboard</h1>
+      <Header />
       
     </>
   )
