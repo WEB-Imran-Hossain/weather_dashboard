@@ -6,7 +6,7 @@ function App() {
   
 
   return (
-    <>
+    <div className='grid place-items-center h-screen'>
       
       <Header />
       <main>
@@ -14,7 +14,7 @@ function App() {
           <WeatherBoard />
         </section>
       </main>
-    </>
+    </div>
   )
 }
 
