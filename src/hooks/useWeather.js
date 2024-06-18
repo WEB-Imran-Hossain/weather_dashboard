@@ -30,15 +30,17 @@ const useWeather = () => {
         message: "Fetching weather data...",
       });
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${
-          import.meta.env.VITE_WEATHER_API_KEY
-        }&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${import.meta.env.VITE_WEATHER_API_KEY}&units=metric`
       );
+      // console.log(response);
+
       if (!response.ok) {
         const errorMessage = `Fetching weather data faild: ${response.status}`;
         throw new Error(errorMessage);
       }
       const data = await response.json();
+      // console.log("Data:", data);
+      
       const updateWeatherData = {
         ...weatherData,
         location: data?.name,
@@ -71,6 +73,7 @@ const useWeather = () => {
     });
 
     navigator.geolocation.getCurrentPosition(function (position) {
+      // console.log("Position:", position);
       fetchWeatherData(position.coords.latitude, position.coords.longitude);
     });
   }, []);
