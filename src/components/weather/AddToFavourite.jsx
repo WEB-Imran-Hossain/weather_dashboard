@@ -13,19 +13,19 @@ const AddToFavourite = () => {
 
   const { latitude, longitude, location } = weatherData;
 
-  // useEffect(() => {
-  //   const found = favourites.find((fav) => fav.location === location);
-  //   toggleFavourite(found);
-  // }, []);
+  useEffect(() => {
+    const found = favourites?.find((fav) => fav?.location === location);
+    toggleFavourite(found);
+  }, [favourites, location]);
 
   function handleFavourites() {
-    // const found = favourites.find((fav) => fav.location === location);
+    const found = favourites?.find((fav) => fav?.location === location);
 
-    // if (!found) {
-    //   addToFavourites(latitude, longitude, location);
-    // } else {
-    //   removeFromFavourites(location);
-    // }
+    if (!found) {
+      addToFavourites(latitude, longitude, location);
+    } else {
+      removeFromFavourites(location);
+    }
     toggleFavourite(!isFavourite);
   }
 
