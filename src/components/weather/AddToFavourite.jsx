@@ -9,24 +9,24 @@ const AddToFavourite = () => {
 
   const { weatherData } = useContext(WeatherContext);
 
-  const [isFavourite, setIsFavourite] = useState(false);
+  const [isFavourite, toggleFavourite] = useState(false);
 
   const { latitude, longitude, location } = weatherData;
 
-  useEffect(() => {
-    const found = favourites.find((fav) => fav.longitude === location);
-    setIsFavourite(found);
-  }, []);
+  // useEffect(() => {
+  //   const found = favourites.find((fav) => fav.location === location);
+  //   toggleFavourite(found);
+  // }, []);
 
   function handleFavourites() {
-    const found = favourites.find((fav) => fav.location === location);
+    // const found = favourites.find((fav) => fav.location === location);
 
-    if (!found) {
-      addToFavourites(latitude, longitude, location);
-    } else {
-      removeFromFavourites(location);
-    }
-    setIsFavourite(!isFavourite);
+    // if (!found) {
+    //   addToFavourites(latitude, longitude, location);
+    // } else {
+    //   removeFromFavourites(location);
+    // }
+    toggleFavourite(!isFavourite);
   }
 
   return (
