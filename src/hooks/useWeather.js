@@ -39,7 +39,6 @@ const useWeather = () => {
           };
         });
 
-
         const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
         // console.log("Fetching URL:", url); // Debugging URL
 
@@ -85,6 +84,7 @@ const useWeather = () => {
     };
 
     setLoading({
+      ...loading,
       state: true,
       message: "Finding Location...",
     });
