@@ -35,7 +35,7 @@ const useWeather = () => {
           return {
             ...prev,
             state: true,
-            message: "Fetching Weather data",
+            message: "Finding Location",
           };
         });
 
@@ -83,11 +83,10 @@ const useWeather = () => {
       }
     };
 
-    setLoading({
-      ...loading,
-      state: true,
-      message: "Finding Location...",
-    });
+    // setLoading({
+    //   state: true,
+    //   message: "Finding Location...",
+    // });
 
     if (selectedLocation.latitude && selectedLocation.longitude) {
       fetchWeatherData(selectedLocation.latitude, selectedLocation.longitude);

@@ -40,7 +40,7 @@ const Page = () => {
       case "Shower Rainy":
         return ShowerRainyImage;
       case "Sunny":
-        return MistImage;
+        return SunnyImage;
       default:
         return ClearSkyImage;
     }
