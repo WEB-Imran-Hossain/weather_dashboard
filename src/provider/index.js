@@ -3,3 +3,5 @@ import FavouriteProvider from "./FavouriteProvider";
 import LocationProvider from "./LocationProvider";
 
 export { WeatherProvider, FavouriteProvider, LocationProvider };
+
+//all provider
