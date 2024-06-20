@@ -1,16 +1,15 @@
 import { useState } from "react";
 import { LocationContext } from "../context";
-import { Children } from "react";
 
-const LocationProvider = ({ Children }) => {
-  const [selectedLocation, seLeletedLocation] = useState({
+const LocationProvider = ({ children }) => {
+  const [selectedLocation, setSelectedLocation] = useState({
     location: "",
     latitude: 0,
     longitude: 0,
   });
   return (
-    <LocationContext.Provider value={(selectedLocation, seLeletedLocation)}>
-      {Children}
+    <LocationContext.Provider value={{ selectedLocation, setSelectedLocation }}>
+      {children}
     </LocationContext.Provider>
   );
 };
