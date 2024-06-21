@@ -29,6 +29,11 @@ const data = [
     latitude: 43.6534817,
     longitude: -79.3839347,
   },
+  {
+    location: "Joypurhat",
+    latitude: 25.0968,
+    longitude: 89.0227,
+  },
 ];
 
 function getLocations() {
