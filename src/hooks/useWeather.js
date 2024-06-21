@@ -26,7 +26,6 @@ const useWeather = () => {
   const [error, setError] = useState(null);
 
   const { selectedLocation } = useContext(LocationContext);
-  // console.log(selectedLocation);
 
   useEffect(() => {
     const fetchWeatherData = async (latitude, longitude) => {
@@ -40,10 +39,8 @@ const useWeather = () => {
         });
 
         const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-        // console.log("Fetching URL:", url); // Debugging URL
 
         const response = await fetch(url);
-        // console.log(response);
 
         if (!response.ok) {
           const errorMessage = `Fetching weather data failed: ${response.status}`;
@@ -51,7 +48,6 @@ const useWeather = () => {
         }
 
         const data = await response.json();
-        // console.log("Data:", data); // Debugging data
 
         setWeatherData((prev) => {
           return {
@@ -70,7 +66,7 @@ const useWeather = () => {
           };
         });
       } catch (err) {
-        console.error("Error fetching weather data:", err); // Debugging error
+        console.error("Error fetching weather data:", err);
         setError(err);
       } finally {
         setLoading((prev) => {
@@ -82,11 +78,6 @@ const useWeather = () => {
         });
       }
     };
-
-    // setLoading({
-    //   state: true,
-    //   message: "Finding Location...",
-    // });
 
     if (selectedLocation.latitude && selectedLocation.longitude) {
       fetchWeatherData(selectedLocation.latitude, selectedLocation.longitude);
