@@ -1,7 +1,7 @@
 import { createContext } from "react";
 
-const WeatherContext = createContext("");
-const FavouriteContext = createContext("");
-const LocationContext = createContext("");
+const WeatherContext = createContext(null);
+const FavouriteContext = createContext(null);
+const LocationContext = createContext(null);
 
 export { WeatherContext, FavouriteContext, LocationContext };
